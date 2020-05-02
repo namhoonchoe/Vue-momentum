@@ -1,50 +1,56 @@
 <template>
   <div id="app">
-    <Todoinput 	v-on:add="addTodoItem"></Todoinput>
-    <Todos	v-bind:todolist="todoItems"	v-on:remove="removeTodoItem"></Todos>
+    <Todoinput 	
+            v-on:add="addTodoItem"
+            ></Todoinput>
+    <Todos	
+            v-bind:todolist="todoItems"	
+            v-on:remove="removeTodoItem"
+            ></Todos>
   </div>
 </template>
 
 <script>
-import Todoinput from './components/Todolist/TodoInput.vue'
-import Todos from './components/Todolist/Todos.vue'
-
-
+import Todoinput from './components/Todolist/TodoInput.vue';
+import Todos from './components/Todolist/Todos.vue';
 
 
 export default {
+
   data(){
     return {
       todoItems: []
-    }
+    };
   },
   methods:{
-    clearAll(){
-      localStorage.clear();
-      this.todoItems = [];
+    fetchTodoItems: function() {
+			for (let i = 0; i < localStorage.length; i++) {
+				let item = localStorage.key(i);
+				this.todoItems.push(item);
+			}
     },
-    addTodo(todoItem) {
+    addTodoItem:  function(todoItem) {
       localStorage.setItem(todoItem, todoItem);
       this.todoItems.push(todoItem);
+
     },
-    removeTodo(todoItem, index){
+    removeTodoItem: function(todoItem, index){
       localStorage.removeItem(todoItem);
       this.todoItems.splice(index,1);
     }
   },
-  created() {
-    if (localStorage.length >0){
-      for (let i=0; i<localStorage.length; i++){
-        this.todoItems.push(localStorage.key(i));
-      }
-    }
-  },
-  name: 'App',
+  created: function() {
+		this.fetchTodoItems();
+	},
+
+  name:'App',
+
   components: {
     'Todoinput': Todoinput,
     'Todos':Todos
   }
-}
+  
+};
 </script>
 
 <style>

@@ -18,19 +18,19 @@ export default {
       data() {
         return {
             newTodoItem:''
-        }      
+        };      
       },
       methods: {
-       addTodo() {
-        const input = this.newTodoItem;
-        this.$emit('addTodo',input)
-        this.newTodoItem = '';
+       addTodo: function() {
+           let input = this.newTodoItem;
+           this.$emit('add',input)
+           this.newTodoItem = '';
         },
-       clearInput() {
+       clearInput: function() {
            this.newTodoItem = '';
         }
           }
-      }
+      };
 
 </script>
 <style scoped>
