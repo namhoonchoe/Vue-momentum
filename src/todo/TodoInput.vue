@@ -18,15 +18,15 @@ export default {
       data() {
         return {
             newTodoItem:''
-        };      
+        }      
       },
       methods: {
-       addTodo: function() {
-           let input = this.newTodoItem;
+       addTodo() {
+           const input = this.newTodoItem;
            this.$emit('add',input)
            this.newTodoItem = '';
         },
-       clearInput: function() {
+       clearInput() {
            this.newTodoItem = '';
         }
           }

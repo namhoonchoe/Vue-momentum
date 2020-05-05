@@ -2,11 +2,11 @@
   <div>
     <Todoinput 	
       v-on:add="addTodoItem"
-      ></Todoinput>
+      />
     <Todos	
       v-bind:todolist="todoItems"	
       v-on:remove="removeTodoItem"
-      ></Todos>
+      />
   </div>
 </template>
 
@@ -19,27 +19,27 @@ export default {
 
   data(){
     return {
-      todoItems: []
-    };
+      todoItems:[]
+    }
   },
   methods:{
-    fetchTodoItems: function() {
-			for (let i = 0; i < localStorage.length; i++) {
+    fetchTodoItems() {
+			for (let i = 1; i < localStorage.length; i++) {
 				let item = localStorage.key(i);
 				this.todoItems.push(item);
 			}
     },
-    addTodoItem: function(todoItem) {
+    addTodoItem(todoItem) {
       localStorage.setItem(todoItem, todoItem);
       this.todoItems.push(todoItem);
 
     },
-    removeTodoItem: function(todoItem, index){
+    removeTodoItem(todoItem, index){
       localStorage.removeItem(todoItem);
       this.todoItems.splice(index,1);
     }
   },
-  created: function() {
+  created() {
 		this.fetchTodoItems();
 	},
 

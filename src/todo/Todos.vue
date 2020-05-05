@@ -1,21 +1,21 @@
 <template>
-        <section class="todos">
-          <ul>
-            <li v-for="(todoItem, index) in todolist" :key="index">
-              <i class="checkBtn fas fa-check" aria-hidden="true"></i>
-              {{todoItem}}  
-              <span class="remove-btn" type ="button" v-on:click="removeTodo(todoItem, index)">
-                <i class="fas fa-minus-square"></i>
-              </span>
-            </li>
-          </ul>
-        </section>
+  <section class="todos">
+    <ul>
+      <li v-for="(todoItem, index) in todolist" :key="index">
+        <i class="checkBtn fas fa-check" aria-hidden="true"></i>
+        {{todoItem}}  
+        <span class="remove-btn" type ="button" v-on:click="removeTodo(todoItem, index)">
+          <i class="fas fa-minus-square"></i>
+        </span>
+      </li>
+    </ul>
+  </section>
 </template>
 <script>
 export default {
      props: ['todolist'],
      methods: {
-       removeTodo:function (todoItem, index) {
+       removeTodo (todoItem, index) {
          this.$emit('remove', todoItem, index);
        }
      }
