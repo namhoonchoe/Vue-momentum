@@ -14,7 +14,6 @@
 import Todoinput from '../todo/TodoInput';
 import Todos from '../todo/Todos';
 
-
 export default {
 
   data(){

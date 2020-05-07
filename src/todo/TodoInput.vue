@@ -22,15 +22,15 @@ export default {
       },
       methods: {
        addTodo() {
-           const input = this.newTodoItem;
-           this.$emit('add',input)
-           this.newTodoItem = '';
+         const input = this.newTodoItem;
+         this.$emit('add',input)
+         this.newTodoItem = '';
         },
        clearInput() {
-           this.newTodoItem = '';
+        this.newTodoItem = '';
         }
           }
-      };
+      }
 
 </script>
 <style scoped>

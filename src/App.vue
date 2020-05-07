@@ -1,21 +1,28 @@
 <template>
   <div id="app">
     <Clock/>
+    <Username/>
     <Todolist/>
+    <Background/>
   </div>
 </template>
 
 <script>
 import Todolist from './components/Todolist.vue';
 import Clock from './components/Clock.vue';
+import Background from './components/Background.vue';
+import Username from './components/Username.vue';
 
 export default {
-
+ 
   name:'App',
-
   components: {
     Todolist,
-    Clock
+    Clock,
+    Username,
+    Background
+
+  
   }
   
 }
