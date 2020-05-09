@@ -3,15 +3,15 @@
     <Clock/>
     <Username/>
     <Todolist/>
-    <Background/>
+    <bgImg/>
   </div>
 </template>
 
 <script>
 import Todolist from './components/Todolist.vue';
 import Clock from './components/Clock.vue';
-import Background from './components/Background.vue';
-import Username from './components/Username.vue';
+import Background from './components/bgImg.vue';
+//import Username from './components/userName.vue';
 
 export default {
  
@@ -19,8 +19,8 @@ export default {
   components: {
     Todolist,
     Clock,
-    Username,
-    Background
+  //  Username,
+    bgImg
 
   
   }

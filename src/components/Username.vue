@@ -1,34 +1,39 @@
-<template>
-  <form v-on:submit.prevent="Username">
-    <input v-bind:id=message>
-  </form>
-</template>
-
 <script>
 export default {
-    data() {
-      return {
-        userName:'',
-        message:'Write your name'
-      }        
+    data(){
+      return{
+         userName:'' 
+      };
     },
-    methods:{
-      saveName(){
-        const input = this.userName;
-        this.$emit('addUsername',input);
-        this.userName = '';
-      },
-      greetings(){
+    mehtods:{
+        saveUsername(){
 
-      },
+        },
+        removeUsername(){
 
+        },
+        modifyUsername(){
+            
+        }
+    },
+    render(h) {
+        if ( this.userName === ''){
+            return (
+                <div class="greetings">  
+                  <input type="text"
+                    placeholder="Write your name"/>                     
+                </div>
+            );
+        }
+        return (
+            <div class="greetings" >
+              <span class="welcome">Welcome ${this.userName}</span>
+            </div>
+        );
+    },
     
-     
-    },
-    computed:{
-      
-    }
-  }
+}
+
 
 </script>
 
