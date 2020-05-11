@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Clock/>
-    <Username/>
+  <!--  <Username/> -->
     <Todolist/>
     <bgImg/>
   </div>
@@ -10,7 +10,7 @@
 <script>
 import Todolist from './components/Todolist.vue';
 import Clock from './components/Clock.vue';
-import Background from './components/bgImg.vue';
+import bgImg from './components/bgImg.vue';
 //import Username from './components/userName.vue';
 
 export default {
