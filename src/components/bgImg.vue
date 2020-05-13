@@ -1,16 +1,16 @@
 <template>
 <body>
     <img src="../assets/1.jpg" 
-         v-if="randNum == 1"
+         v-show="randNum == 1"
          alt="bgimg1">
     <img src="../assets/2.jpg" 
-         v-else-if="randNum == 2"
+         v-show="randNum == 2"
          alt="bgimg2">
     <img src="../assets/3.jpg" 
-         v-else-if="randNum == 3"
+         v-show="randNum == 3"
          alt="bgimg3">
     <img src="../assets/4.jpg" 
-         v-else
+         v-show="randNum == 4"
          alt="bgimg4">
 </body>  
 </template>
@@ -24,7 +24,7 @@ export default {
     },
     methods :{
       genRandom() {
-          const imgNum = 8;
+          const imgNum = 4 ;
           this.randNum = Math.floor(Math.random()*imgNum);
           return this.randNum
       }     
