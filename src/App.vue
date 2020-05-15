@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Clock/>
-    <userName/> 
+    <userName/>
     <Todolist/>
     <bgImg/>
   </div>

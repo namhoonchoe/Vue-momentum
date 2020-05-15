@@ -5,44 +5,53 @@ export default {
          userName:''
      }
     },
-    methods:{
+    
+      methods:{
         askForname() {
-            return <div>
-                     <input value={this.userName} placeholder = "Write your name" />
-                     <span class="add_icon" onChange = {this.addUsername}>
-                        <i class="far fa-plus-square"></i>
-                     </span>
-                   </div> 
+            return <input type = "text" 
+                          placeholder = "Write your name" 
+                          value={this.userName}/>
         },
         paintGreetings(){
-            return <div>
-                     <p> Welcome {this.userName}! </p>
-                     <span class="modify_icon" onChange = {this.modifyUsername}>
-                        <i class="far fa-plus-square"></i>
-                     </span>
-                   </div>
+            return  <p> Welcome {this.userName}! </p>
         },
-        addUsername(userName){
-            localStorage.setItem(userName,userName);
-        },
-        modifyUsername(userName){
-            localStorage.removeItem(userName);
-            this.addUsername();
-        },
-        loadUsername(){
-            if(this.userName === ''){
-              return this.askForname(); 
-            } else {
-               return  this.paintGreetings();
-            }
+       
+        getUsername(){
+            this.userName = localStorage.getItem('userName');
+        }, 
 
-        }
+        saveUsername(text){
+            this.getUsername();   
+            localStorage.setItem('userName',text);         
+        },
+
+        modifyUsername(text){
+            localStorage.removeItem('userName');
+            this.saveUsername(text);
+        },
+        
+    
     },
-     render(){
-        return(
-            this.loadUsername()
-        )
+    render(){
+        const currentUser = this.userName;
+        if(currentUser === ''){
+            return <div>
+                      {this.askForname()}
+                      <span class="add_icon" onClick={this.saveUsername}>
+                         <i class="far fa-plus-square"></i>
+                      </span> 
+                    </div>
+            } else {
+            return <div>
+               {this.paintGreetings()}
+               <span class="modify_icon"
+                     onClick={this.modifyUsername}>
+                  <i class="far fa-plus-square"></i>
+               </span>
+             </div>
+        }       
       }
+
    
     }
 

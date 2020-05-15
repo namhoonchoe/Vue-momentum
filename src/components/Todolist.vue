@@ -29,12 +29,12 @@ export default {
 			}
     },
     addTodoItem(todoItem) {
-      localStorage.setItem(todoItem, todoItem);
+      localStorage.setItem('todoItem', todoItem);
       this.todoItems.push(todoItem);
 
     },
     removeTodoItem(todoItem, index){
-      localStorage.removeItem(todoItem);
+      localStorage.removeItem('todoItem');
       this.todoItems.splice(index,1);
     }
   },

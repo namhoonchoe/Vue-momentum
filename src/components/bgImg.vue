@@ -25,7 +25,7 @@ export default {
     methods :{
       genRandom() {
           const imgNum = 4 ;
-          this.randNum = Math.floor(Math.random()*imgNum);
+          this.randNum = Math.floor(Math.random()*imgNum)+1;
           return this.randNum
       }     
     } ,
