@@ -4,7 +4,7 @@
       <li v-for="(todoItem, index) in todolist" :key="index">
         <i class="checkBtn fas fa-check" aria-hidden="true"></i>
         {{todoItem}}  
-        <span class="remove-btn" type ="button" v-on:click="removeTodo(todoItem, index)">
+        <span class="remove-btn" type ="button" v-on:click="removeTodo">
           <i class="fas fa-minus-square"></i>
         </span>
       </li>

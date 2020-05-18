@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Clock/>
-    <userName/>
+    <greetings/>
     <Todolist/>
     <bgImg/>
   </div>
@@ -11,7 +11,7 @@
 import Todolist from './components/Todolist.vue';
 import Clock from './components/Clock.vue';
 import bgImg from './components/bgImg.vue';
-import userName from './greetings/userName.vue';
+import greetings from './greetings/greetings.vue';
 
 export default {
  
@@ -19,7 +19,7 @@ export default {
   components: {
     Todolist,
     Clock,
-    userName,
+    greetings,
     bgImg
 
   
