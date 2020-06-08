@@ -17,6 +17,7 @@ export default {
       getZero(n) {
         return (parseInt(n,10) >= 10 ? '' : '0') + n;
       },
+      
       timeGetter(){
          const time = new Date()
          this.hours = this.getZero(time.getHours());

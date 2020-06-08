@@ -23,7 +23,7 @@ export default {
   },
   methods:{
     fetchTodoItems() {
-			for (let i = 1; i < localStorage.length; i++) {
+			for (let i = 2; i < localStorage.length; i++) {
 				let item = localStorage.key(i);
 				this.todoItems.push(item);
 			}
