@@ -2,10 +2,11 @@
   <div>
     <form v-show="this.userName === null " >
       <input type = "text" 
-             v-model.lazy="userName"           
+             v-model.lazy="userName"  
+             v-on:keypress.enter.prevent       
              placeholder = "Write your name"/>
         <span class="add_icon"
-              v-on:submit.prevent="saveUsername">
+              v-on:cilck="saveUsername">
           <i class="far fa-plus-square"></i>
         </span>       
                         

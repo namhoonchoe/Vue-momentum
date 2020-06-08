@@ -1,5 +1,6 @@
 <template>
-<body>
+<div>
+  <body>
     <img src="../assets/1.jpg" 
          v-show="randNum == 1"
          alt="bgimg1">
@@ -12,11 +13,34 @@
     <img src="../assets/4.jpg" 
          v-show="randNum == 4"
          alt="bgimg4">
-</body>  
+  </body>  
+  <section class="momentum--content">
+    <div class="clockContainer">
+      <Clock/>
+    </div>
+    <h4 class="greetings">
+      <greetings/>
+    </h4> 
+    <div class="todoList">
+      <Todolist/>
+    </div>
+  </section>
+ 
+</div>
+
 </template>
 
 <script>
+import Todolist from '../components/Todolist.vue';
+import Clock from '../components/Clock.vue';
+import greetings from '../greetings/greetings.vue';
+
 export default {
+  components: {
+    Todolist,
+    Clock,
+    greetings
+    },
     data(){
       return {
         randNum: 0
@@ -37,12 +61,13 @@ export default {
 
 </script>
 
-<style>
-    .body{
-        position:absolute;
-        margin-top: 0px;
-        margin-left:0px;
-        width:100%;
-        z-index: -1;
-    }
+<style scoped>
+  img{
+      width:100vw; 
+      height:100vh; 
+   }
+  .momentum--content{
+    padding-top: 10rem;
+  }
+  
 </style>
