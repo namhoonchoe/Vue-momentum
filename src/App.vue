@@ -21,27 +21,16 @@ export default {
 <style >
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color:#f5f5f5
-
-
-
-
-
-
-
-
-
-
-  
+  color:#f5f5f5;
+  box-sizing:border-box;
 }
 body{
     position:absolute;
-    margin:0;
+    margin:0px;
+    border:0px;
     min-width:100%;
-    min-height:100%;
+    min-height:auto;
     z-index: -1;
   }
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="js-clock">
+    <div class="clockContainer">
      {{hours}}:{{minutes}}:{{seconds}}:{{hourSystem}}
     </div>
 </template>
@@ -38,5 +38,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .clockContainer {
+    text-align: center;
+  }
 </style>

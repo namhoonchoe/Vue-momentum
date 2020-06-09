@@ -15,15 +15,18 @@
          alt="bgimg4">
   </body>  
   <section class="momentum--content">
-    <div class="clockContainer">
+    <div class="clock-container">
       <Clock/>
     </div>
-    <h4 class="greetings">
+    <section class="input-container">
+     <h4 class="greetings">
       <greetings/>
-    </h4> 
-    <div class="todoList">
+     </h4> 
+     <div class="todoList">
       <Todolist/>
-    </div>
+     </div>
+    </section>
+    
   </section>
  
 </div>
@@ -31,9 +34,9 @@
 </template>
 
 <script>
-import Todolist from '../components/Todolist.vue';
-import Clock from '../components/Clock.vue';
-import greetings from '../greetings/greetings.vue';
+import Todolist from './Todolist.vue';
+import Clock from './Clock.vue';
+import greetings from './greetings.vue';
 
 export default {
   components: {
@@ -67,7 +70,11 @@ export default {
       height:100vh; 
    }
   .momentum--content{
-    padding-top: 10rem;
+    padding-top: 8rem;
   }
+  .clock-container{
+    font-size: 3rem;
+  }
+  
   
 </style>
